@@ -17,7 +17,7 @@
 
        <%
             int[] nums = {1,2,3};
-            request.setAttribute("nums", nums);
+            request.setAttribute("nums", nums); //Atributo para requisição HTTP
        %> 
        
         <h1>Request</h1>
@@ -26,6 +26,8 @@
             ${n} <br />
        </c:forEach>
        
+       <h1>Números Pares</h1>
+
        <c:forEach var="item" begin="1" end="10">
             <c:if test="${item % 2 == 0}">
                 ${item} <br />
@@ -33,7 +35,8 @@
        </c:forEach>
 
        <h1>TOKENS</h1>
-       <c:forTokens var="fruta" item="maçã, manga, melão" delims=",">
+       
+       <c:forTokens var="fruta" items="maçã, manga, melão" delims=",">
             ${fruta} <br />
        </c:forTokens>
    
